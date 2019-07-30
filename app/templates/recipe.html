@@ -6,20 +6,45 @@
 </head>
 
 <body class="green darken-1">
-    <h1 class="center">Dishes</h1>
+    <h1 class="center">{{ meal }} Recipe :)))</h1>
     <div class="container">
         <div class="row">
             <div class="col l4">
-                <div class="row">stuff</div>
-                <div class="row">stuff</div>
+               {% for x in recipe %}
+                    <ul>
+                        <li class="center">INGREDIENTS</li>
+                        <p><li>{{ x['strIngredient1'] }}</li>
+                        <li>{{ x['strIngredient2'] }}</li>
+                        <li>{{ x['strIngredient3'] }}</li>
+                        <li>{{ x['strIngredient4'] }}</li>
+                        <li>{{ x['strIngredient5'] }}</li>
+                        <li>{{ x['strIngredient6'] }}</li>
+                        <li>{{ x['strIngredient7'] }}</li>
+                        <li>{{ x['strIngredient8'] }}</li>
+                        <li>{{ x['strIngredient9'] }}</li>
+                        <li>{{ x['strIngredient10'] }}</li>
+                        <li>{{ x['strIngredient11'] }}</li>
+                        <li>{{ x['strIngredient12'] }}</li>
+                        <li>{{ x['strIngredient13'] }}</li>
+                        <li>{{ x['strIngredient14'] }}</li>
+                        <li>{{ x['strIngredient15'] }}</li>
+                        <li>{{ x['strIngredient16'] }}</li>
+                        <li>{{ x['strIngredient17'] }}</li>
+                        <li>{{ x['strIngredient18'] }}</li>
+                        <li>{{ x['strIngredient19'] }}</li>
+                        <li>{{ x['strIngredient20'] }}</li></p>
+                    </ul>
+                {% endfor %} 
+            </div>
+            <div class="col l4 center">INSTRUCTIONS
+                <p>{% for x in recipe %}
+                    {{ x['strInstructions'] }}
+                {% endfor %}</p>
             </div>
             <div class="col l4">
-                <div class="row">stuff</div>
-                <div class="row">stuff</div>
-            </div>
-            <div class="col l4">
-                <div class="row">stuff</div>
-                <div class="row">stuff</div>
+                {% for x in recipe %}
+                    <img src="{{ x['strMealThumb'] }}"></img>
+                {% endfor %}
             </div>
         </div>
     </div>

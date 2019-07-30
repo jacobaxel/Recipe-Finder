@@ -8,23 +8,25 @@
 <body class="red darken-1">
     <div>
         <h1 class="center">
-            Popular {{ genre }} foods!
+            Popular {{ cuisine }} foods!
         </h1>
     </div>
     <div class="container">
         <div class="row">
             <div class="col l6">
                 <h5>
-                    Typical {{ genre }} dishes
+                    Typical {{ cuisine }} dishes
                 </h5>
-                <ol>
-                    <li><a href="/dishes">Name of food</a></li>
-                    <li><a href="/dishes">Name of food</a></li>
-                    <li><a href="/dishes">Name of food</a></li>
-                    <li><a href="/dishes">Name of food</a></li>
-                    <li><a href="/dishes">Name of food</a></li>
-                    <li><a href="/dishes">Name of food</a></li>
-                </ol>
+               <form method="post" action="/dishes" class="red lighten-2">
+        <label>Browser Select</label>
+        <select name="meal" class="browser-default">
+    <option value="" disabled selected>Choose your dish</option>
+    {% for dish in dishes %}
+        <option value="{{ dish['strMeal'] }}">{{ dish['strMeal'] }}</option>
+    {% endfor %}
+  </select>
+        <input type="submit" value="Find Recipe!!" />
+    </form>
             </div>
             <div class="col l6">
                 <img src="https://cdn.ebaumsworld.com/mediaFiles/picture/2453506/85677232.jpg"></img>

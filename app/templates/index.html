@@ -1,11 +1,12 @@
 <html>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 <head>
     <title>Recipe Finder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script type="text/javascript" src="/static/script.js"></script>
 </head>
 
-<body class="green darken-1">
+<body class="red lighten-2">
     <div class="container">
         <div class="row">
             <div class="col l2">
@@ -19,10 +20,15 @@
             </div>
         </div>
     </div>
-    <form method="post" action="/favorites">
-        <label for="genre">What type of food do you desire?</label>
-        <input type='text' name='genre'>
-        <input type="submit" value="Submit" />
+    <form method="post" action="/favorites" class="red lighten-2">
+        <label>Browser Select</label>
+        <select name="cuisine" class="browser-default">
+    <option value="" disabled selected>Choose your cuisine</option>
+    {% for cuisine in cuisineList %}
+        <option value="{{ cuisine['strArea'] }}">{{ cuisine['strArea'] }}</option>
+    {% endfor %}
+  </select>
+        <input type="submit" value="Find Dishes!!" />
     </form>
 </body>
 

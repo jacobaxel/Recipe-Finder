@@ -5,18 +5,27 @@ from app.models import model, formopener
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template("index.html")
+    return render_template("index.html", cuisineList=model.cuisineList)
     
 @app.route('/favorites',methods=["GET","POST"])
 def favorites():
     if request.method=="GET":
-        return render_template("index.html")
+        return render_template("index.html", cuisineList=model.cuisineList)
     else:
         userdata = request.form
-        genre = userdata['genre']
-        return render_template('genre.html', genre=genre)
+        cuisine = userdata['cuisine']
+        ## concatenate url string to query the API
+        ## query the API
+        ## set this query to dishes
+        dishes = model.meals(cuisine)
+        return render_template('genre.html', cuisine=cuisine, dishes=dishes)
         
-@app.route('/dishes')
-def dishes():
-    return render_template('recipe.html')
-    
+@app.route('/dishes',methods=["GET","POST"])
+def recipe():
+    if request.method=="GET":
+        return render_template("index.html", cuisineList=model.cuisineList)
+    else:
+        userdata = request.form
+        meal = userdata['meal']
+        recipe = model.recipes(meal)
+        return render_template('recipe.html', meal=meal, recipe=recipe)
