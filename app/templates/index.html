@@ -3,33 +3,59 @@
 <head>
     <title>Recipe Finder</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="static/style.css" type="text/css" />
+    <link href='https://fonts.googleapis.com/css?family=Aguafina Script' rel='stylesheet'>
+
     <script type="text/javascript" src="/static/script.js"></script>
 </head>
 
-<body class="red lighten-2">
-    <div class="container">
-        <div class="row">
-            <div class="col l2">
-                About stuff here
-            </div>
-            <div class="col l8 center">
-                <h1>WELCOME</h1>
-            </div>
-            <div class="col l2">
-                Creators stuff
-            </div>
+<body class="teal lighten-2">
+    <nav class="indigo lighten-2">
+        <div class="nav-wrapper">
+            <!--<a href="#!" class="brand-logo left"><img class="responsive-img"src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/fork-and-knife-with-plate.png"></img></a>-->
+            <!--<a href="#!" class="brand-logo left"><img class="responsive-img" src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/fork-and-knife-with-plate.png"></img></a>-->
+            <!--<ul class="left hide-on-med-and-down">-->
+            <!--    <li><a href="/about">About Us</a></li>-->
+            <!--    <li><a href="/settings">Settings</a></li>-->
+            <!--    <li><a href="collapsible.html">JavaScript</a></li>-->
+            <!--</ul>-->
+        </div>
+        <!--<div class="row">-->
+        <!--    <div class="col l2 center">-->
+        <!--        About stuff here-->
+        <!--    </div>-->
+        <!--    <div class="col l8 center">-->
+        <!--    </div>-->
+        <!--    <div class="col l2 center">-->
+        <!--        Creators stuff-->
+        <!--    </div>-->
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col s12 m6 l3">
+            <img src="https://cdn.pixabay.com/photo/2012/04/01/17/14/earth-23593__340.png" class="pic"></img>
+        </div>
+        <div class="col s12 m6 l6 center light-blue lighten-2 pad">
+            <h1 class="script">Welcome <br> to our <br> Recipe Finder</h1>
+        </div>
+        <div class="col s12 m12 l3">
+            <img src="https://cdn.pixabay.com/photo/2012/04/01/17/14/earth-23593__340.png" class="pic"></img>
         </div>
     </div>
-    <form method="post" action="/favorites" class="red lighten-2">
-        <label>Browser Select</label>
-        <select name="cuisine" class="browser-default">
-    <option value="" disabled selected>Choose your cuisine</option>
+
+    <form method="post" action="/favorites">
+        <label></label>
+        <select name="cuisine" class="browser-default blue lighten-2">
+    <option value="" disabled selected>Select your cuisine</option>
     {% for cuisine in cuisineList %}
         <option value="{{ cuisine['strArea'] }}">{{ cuisine['strArea'] }}</option>
     {% endfor %}
   </select>
-        <input type="submit" value="Find Dishes!!" />
+        <input type="submit" value="Find Dishes!!" class="red lighten-2" />
     </form>
+    <div class="container">
+        <img src="https://www.edengourmet.com/goe/wp-content/uploads/2019/01/Garden-of-Eden-Gourmet-Food-Home-Slider1-1024x626.jpg" class="responsive-img"></img>
+    </div>
 </body>
 
 </html>

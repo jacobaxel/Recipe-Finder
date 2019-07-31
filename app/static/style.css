@@ -1,0 +1,20 @@
+/*.bkpic {*/
+/*    background-image: url("https://www.worldflagshop.com/wp-content/uploads/2018/10/195-flag-333x200.png")!important;*/
+/*    background-size: 1000000px 1000000px !important; */
+/*}*/
+.pic {
+    width:100% !important;
+    height:auto !important;
+}
+.script {
+    font-family: 'Aguafina Script' !important;
+}
+
+.pad {
+    height: 300px !important;
+}
+
+.pix {
+    width: 15000px !important;
+    height: auto !important;
+}

@@ -37,3 +37,7 @@ def recipes(meal_food):
 
     #requests.get(meals_url).json()['meals']
     
+def code(cuisine):
+    temp = {"American":"us","British":"gb","Canadian":"ca","Chinese":"cn","Dutch":"nl","Egyptian":"eg","French":"fr","Greek":"gr","Indian":"in","Irish":"ie","Italian":"it","Jamaican":"jm","Japanese":"jp","Kenyan":"ke","Malaysian":"my","Mexican":"mx","Moroccan":"ma","Russian":"ru","Spanish":"es","Thai":"th","Tunisian":"tn","Unknown":"aq","Vietnamese":"vn"}
+    return temp[cuisine]
+    

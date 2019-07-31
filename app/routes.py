@@ -18,7 +18,8 @@ def favorites():
         ## query the API
         ## set this query to dishes
         dishes = model.meals(cuisine)
-        return render_template('genre.html', cuisine=cuisine, dishes=dishes)
+        code = model.code(cuisine)
+        return render_template('genre.html', cuisine=cuisine, dishes=dishes, code=code)
         
 @app.route('/dishes',methods=["GET","POST"])
 def recipe():
@@ -29,3 +30,11 @@ def recipe():
         meal = userdata['meal']
         recipe = model.recipes(meal)
         return render_template('recipe.html', meal=meal, recipe=recipe)
+        
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')

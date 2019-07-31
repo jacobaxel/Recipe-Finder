@@ -5,7 +5,7 @@
     <title>Favorite Dishes</title>
 </head>
 
-<body class="red darken-1">
+<body class="cyan darken-1">
     <div>
         <h1 class="center">
             Popular {{ cuisine }} foods!
@@ -13,23 +13,24 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col l6">
+            <div class="col l6 m6 s12">
                 <h5>
                     Typical {{ cuisine }} dishes
                 </h5>
                <form method="post" action="/dishes" class="red lighten-2">
-        <label>Browser Select</label>
-        <select name="meal" class="browser-default">
-    <option value="" disabled selected>Choose your dish</option>
+        <label></label>
+        <select name="meal" class="browser-default blue lighten-2">
+    <option value="" disabled selected>Pick a dish</option>
     {% for dish in dishes %}
         <option value="{{ dish['strMeal'] }}">{{ dish['strMeal'] }}</option>
     {% endfor %}
   </select>
-        <input type="submit" value="Find Recipe!!" />
+        <input type="submit" value="Find Recipe!!" class="red lighten-2" />
     </form>
             </div>
-            <div class="col l6">
-                <img src="https://cdn.ebaumsworld.com/mediaFiles/picture/2453506/85677232.jpg"></img>
+            <div class="col l6 m6 s12">
+                <img width="500" src="https://www.countryflags.io/{{ code }}/shiny/64.png"></img>
+
             </div>
         </div>
               
