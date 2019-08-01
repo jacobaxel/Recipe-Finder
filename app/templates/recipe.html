@@ -1,46 +1,88 @@
 <html>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 <head>
     <title>Recipe Finder</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="static/style.css" type="text/css" />
 </head>
 
 <body class="green darken-1">
-    <h1 class="center">{{ meal }} Recipe :)))</h1>
-    <div class="black-text"><h5 class="center"><a href="/">find another recipe here :))</a></h5></div>
+    <h1 class="center">{{ meal }} Recipe</h1>
+    <div><h5 class="center"><a href="/" class="purple-text text-darken-1 underline">find another recipe here</a></h5></div>
     <br>
     <div class="container">
         <div class="row">
             <div class="col l4 m6 s12">
                {% for x in recipe %}
+                    <h6 class="underline">INGREDIENTS:</h6>
                     <ul>
-                        <li class="center">INGREDIENTS</li>
+                        
                         <p>
+                            {% if x['strMeasure1'] and x['strIngredient1'] %}
                             <li>{{ x['strMeasure1'] }} {{ x['strIngredient1'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure2'] and x['strIngredient2'] %}
                             <li>{{ x['strMeasure2'] }} {{ x['strIngredient2'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure3'] and x['strIngredient3'] %}
                             <li>{{ x['strMeasure3'] }} {{ x['strIngredient3'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure4'] and x['strIngredient4'] %}
                             <li>{{ x['strMeasure4'] }} {{ x['strIngredient4'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure5'] and x['strIngredient5'] %}
                             <li>{{ x['strMeasure5'] }} {{ x['strIngredient5'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure6'] and x['strIngredient6'] %}
                             <li>{{ x['strMeasure6'] }} {{ x['strIngredient6'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure7'] and x['strIngredient7'] %}
                             <li>{{ x['strMeasure7'] }} {{ x['strIngredient7'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure8'] and x['strIngredient8'] %}
                             <li>{{ x['strMeasure8'] }} {{ x['strIngredient8'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure9'] and x['strIngredient9'] %}
                             <li>{{ x['strMeasure9'] }} {{ x['strIngredient9'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure10'] and x['strIngredient10'] %}
                             <li>{{ x['strMeasure10'] }} {{ x['strIngredient10'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure11'] and x['strIngredient11'] %}
                             <li>{{ x['strMeasure11'] }} {{ x['strIngredient11'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure12'] and x['strIngredient12'] %}
                             <li>{{ x['strMeasure12'] }} {{ x['strIngredient12'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure13'] and x['strIngredient13'] %}
                             <li>{{ x['strMeasure13'] }} {{ x['strIngredient13'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure14'] and x['strIngredient14'] %}
                             <li>{{ x['strMeasure14'] }} {{ x['strIngredient14'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure15'] and x['strIngredient15'] %}
                             <li>{{ x['strMeasure15'] }} {{ x['strIngredient15'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure16'] and x['strIngredient16'] %}
                             <li>{{ x['strMeasure16'] }} {{ x['strIngredient16'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure17'] and x['strIngredient17'] %}
                             <li>{{ x['strMeasure17'] }} {{ x['strIngredient17'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure18'] and x['strIngredient18'] %}
                             <li>{{ x['strMeasure18'] }} {{ x['strIngredient18'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure19'] and x['strIngredient19'] %}
                             <li>{{ x['strMeasure19'] }} {{ x['strIngredient19'] }}</li>
+                            {% endif %}
+                            {% if x['strMeasure20'] and x['strIngredient20'] %}
                             <li>{{ x['strMeasure20'] }} {{ x['strIngredient20'] }}</li>
+                            {% endif %}
                         </p>
                     </ul>
                 {% endfor %} 
             </div>
-            <div class="col l4 m6 s12 center">INSTRUCTIONS
+            <div class="col l4 m6 s12 center"><h6 class="underline">INSTRUCTIONS</h6>
                 <p>{% for x in recipe %}
                     {{ x['strInstructions'] }}
                 {% endfor %}</p>

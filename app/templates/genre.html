@@ -1,8 +1,9 @@
 <html>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 <head>
     <title>Favorite Dishes</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 
 <body class="cyan darken-1">
@@ -13,10 +14,12 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col l6 m6 s12">
+            <div class="col l6 m12 s12">
                 <h5>
                     Typical {{ cuisine }} dishes
                 </h5>
+               <div class="row">
+                   <div class="col l8">
                <form method="post" action="/dishes" class="red lighten-2">
         <label></label>
         <select name="meal" class="browser-default blue lighten-2">
@@ -27,8 +30,10 @@
   </select>
         <input type="submit" value="Find Recipe!!" class="red lighten-2" />
     </form>
+    </div>
+    </div>
             </div>
-            <div class="col l6 m6 s12">
+            <div class="col l6 m12 s12">
                 <img width="500" src="https://www.countryflags.io/{{ code }}/shiny/64.png"></img>
 
             </div>
