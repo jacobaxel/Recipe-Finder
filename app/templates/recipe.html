@@ -6,13 +6,13 @@
 <link rel="stylesheet" href="static/style.css" type="text/css" />
 </head>
 
-<body class="green darken-1">
-    <h1 class="center">{{ meal }} Recipe</h1>
-    <div><h5 class="center"><a href="/" class="purple-text text-darken-1 underline">find another recipe here</a></h5></div>
+<body background="http://www.thepleasingplate.com/files/2014/04/floatleft2.png" class="responsive-img" id="bg2">
+    <div class="orange lighten-2 opacity script"><h1 class="center">{{ meal }} Recipe</h1></div>
+    <div><h5 class="center"><a href="/" class="blue-text text-darken-3 underline orange lighten-2 opacity">find another recipe here</a></h5></div>
     <br>
     <div class="container">
         <div class="row">
-            <div class="col l4 m6 s12">
+            <div class="col l4 m6 s12 orange lighten-2 opacity center">
                {% for x in recipe %}
                     <h6 class="underline">INGREDIENTS:</h6>
                     <ul>
@@ -82,7 +82,7 @@
                     </ul>
                 {% endfor %} 
             </div>
-            <div class="col l4 m6 s12 center"><h6 class="underline">INSTRUCTIONS</h6>
+            <div class="col l4 m6 s12 center orange lighten-2 opacity"><h6 class="underline">INSTRUCTIONS</h6>
                 <p>{% for x in recipe %}
                     {{ x['strInstructions'] }}
                 {% endfor %}</p>

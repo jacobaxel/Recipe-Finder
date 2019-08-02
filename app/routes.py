@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template, request, session
+from flask import render_template, request, session, redirect
 from app.models import model, formopener
 import random
 
@@ -13,7 +13,7 @@ def index():
 @app.route('/favorites',methods=["GET","POST"])
 def favorites():
     if request.method=="GET":
-        return render_template("index.html", cuisineList=model.cuisineList)
+        return redirect('/')
     else:
         userdata = request.form
         if 'cuisine' not in userdata:
@@ -32,7 +32,7 @@ def favorites():
 @app.route('/dishes',methods=["GET","POST"])
 def recipe():
     if request.method=="GET":
-        return render_template("index.html", cuisineList=model.cuisineList)
+        return redirect('/')
     else:
         userdata = request.form
         if 'meal' not in userdata:
