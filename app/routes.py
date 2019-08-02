@@ -24,9 +24,9 @@ def favorites():
             code = model.code(cuisine)['code']
             return render_template('genre.html', cuisine=cuisine, dishes=dishes, code=code)
         cuisine = userdata['cuisine']
+        session['cuisine'] = model.code(cuisine)['cuisine']
         dishes = model.meals(session['cuisine'])
         code = model.code(cuisine)['code']
-        session['cuisine'] = model.code(cuisine)['cuisine']
         return render_template('genre.html', cuisine=cuisine, dishes=dishes, code=code)
         
 @app.route('/dishes',methods=["GET","POST"])
